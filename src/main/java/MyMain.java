@@ -8,7 +8,13 @@ public class MyMain {
     // scan.nextDouble() might be useful here
     public static double inputDouble() {
         Scanner scan = new Scanner(System.in);
-        // REPLACE THIS WITH YOUR CODE
+        System.out.println("Please enter a number between 0 and 1000000");
+        double cents = scan.nextDouble();
+        while (0.0 > cents || cents > 1000000.0) {
+            System.out.println("Please enter a number between 0 and 1000000");
+            cents = scan.nextDouble();
+        }
+        System.out.print(cents);
 
         return -1.0;
     }
@@ -17,33 +23,50 @@ public class MyMain {
     // can return in change
     // You should use a while loop!
     public static int numQuarters(double money) {
-        // REPLACE THIS WITH YOUR CODE
-        return 0;
+        int quarters = 0;
+        while (money >= 0.25) {
+            quarters = quarters + 1;
+            money = money - 0.25;
+        }
+        return quarters;
     }
 
     // Takes a double money as input and returns the number of dimes that we
     // can return in change
     // You should use a while loop!
     public static int numDimes(double money) {
-        // REPLACE THIS WITH YOUR CODE
-        return 0;
+        int dimes = 0;
+        while (money >= 0.10) {
+            dimes = dimes + 1;
+            money = money - 0.10;
+
+        return dimes;
     }
 
 
 
 
 
-    //  Takes in two Strings as input and returns a String equal to those two Strings added
-    //  together in alphabetic order.
-    public static String stringOrder(String str1, String str2) {
-        return "";
-    }
+//    //  Takes in two Strings as input and returns a String equal to those two Strings added
+//    //  together in alphabetic order.
+//    public static String stringOrder(String str1, String str2) {
+//        return "";
+//    }
 
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // You should test inputDouble yourself!
+        int quarter = 0;
+        double cash = scan.nextDouble();
+        while (cash >= 0.25) {
+            quarter = quarter + 1;
+            cash = cash - 0.25;
+        }
+        while (cash/(0.25 * quarter) >= 0.10) {
+
+        }
+
         double d = inputDouble();
 
         // Some code to test numQuarters
